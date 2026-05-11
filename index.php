@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-    <p>Welcome to your basic PHP page.</p>
-</body>
-</html>
+<?php
+	include('./includes/config.inc.php');
+	$oldal = $_SERVER['QUERY_STRING'];
+	if ($oldal!="") {
+		if (isset($oldalak[$oldal]) && file_exists("./templates/pages/{$oldalak[$oldal]['fajl']}.tpl.php")) {
+			$keres = $oldalak[$oldal];
+		}
+		else { 
+			$keres = $hiba_oldal;
+			header("HTTP/1.0 404 Not Found");
+		}
+	}
+	else $keres = $oldalak['/'];
+	include('./templates/index.tpl.php'); 
+?>
