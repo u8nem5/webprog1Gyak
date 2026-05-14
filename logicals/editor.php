@@ -58,7 +58,7 @@ $id = (int)($_GET['id'] ?? 0);
         <br>
 
         <button class="w3-button w3-orange" type="submit">Mentés</button>
-        <a class="w3-button w3-border" href="index.php?oldal=blog">Vissza</a>
+        <a class="w3-button w3-border" href="/blog">Mégse</a>
     </form>
 
 </div>

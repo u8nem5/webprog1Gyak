@@ -76,7 +76,7 @@ function uploadCoverImage($oldPath = null)
 
 function redirectToBlog()
 {
-    header('Location: ../index.php?oldal=blog');
+    header('Location: /blog');
     exit;
 }
 

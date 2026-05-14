@@ -70,3 +70,41 @@ input, textarea, select {
     height: auto;
     margin-bottom: 12px;
 }
+
+    .blog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+
+    .blog-card {
+        background: white;
+        margin-bottom: 22px;
+    }
+
+    .blog-date {
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .blog-cover {
+        width: 100%;
+        max-height: 360px;
+        object-fit: cover;
+        margin-bottom: 14px;
+    }
+
+    .blog-content {
+        line-height: 1.7;
+    }
+
+    .blog-actions {
+        margin-top: 16px;
+    }
+
+    .blog-actions a,
+    .blog-actions button {
+        margin-right: 6px;
+    }
