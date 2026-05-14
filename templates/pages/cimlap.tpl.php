@@ -1,11 +1,75 @@
-<h2>Köszöntés</h2>
-<img src="./images/arc.jpg">
-<h3>Mi a Lorem Ipsum?</h3>
-<p>A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. Az 1960-as években népszerûsítették a Lorem Ipsum részleteket magukbafoglaló Letraset lapokkal, és legutóbb softwarekkel mint például az Aldus Pagemaker.</p>
-<h3>Honnan származik?</h3>
-<p>A hiedelemmel ellentétben a Lorem Ipsum nem véletlenszerû szöveg. Gyökerei egy Kr. E. 45-ös latin irodalmi klasszikushoz nyúlnak. Richarrd McClintock a virginiai Hampden-Sydney egyetem professzora kikereste az ismeretlenebb latin szavak közül az egyiket (consectetur) egy Lorem Ipsum részletbõl, és a klasszikus irodalmat átkutatva vitathatatlan forrást talált. A Lorem Ipsum az 1.10.32 és 1.10.33-as de Finibus Bonoruem et Malorum részleteibõl származik (A Jó és Rossz határai - Cicero), Kr. E. 45-bõl. A könyv az etika elméletét tanulmányozza, ami nagyon népszerû volt a reneszánsz korban. A Lorem Ipsum elsõ sora, Lorem ipsum dolor sit amet.. a 1.10.32-es bekezdésbõl származik.</p>
-<p>A Lorem Ipsum alaprészlete, amit az 1500-as évek óta használtak, az érdeklõdõk kedvéért lent újra megtekinthetõ. Az 1.10.32 és 1.10.33-as bekezdéseket szintén eredeti formájukban reprodukálták a hozzá tartozó angol változattal az 1914-es fordításból H. Rackhamtól.</p>
-<h3>Miért használjuk?</h3>
-<p>Ez egy régóta elfogadott tény, miszerint egy olvasót zavarja az olvasható szöveg miközben a szöveg elrendezését nézi. A Lorem Ipsum használatának lényege, hogy többé-kevésbé rendezettebb betûket tartalmaz, ellentétben a Tartalom helye, Tartalom helye-féle megoldással. Sok desktop szerkesztõ és weboldal szerkesztõ használja a Lorem Ipsum-ot mint alapbeállítású szövegmodellt, és egy keresés a lorem ipsum-ra sok félkész weboldalt fog eredményezni.</p>
-<h3>Honnan szerezhető be?</h3>
-<p>A Lorem Ipsum részleteinek sok változata elérhetõ, de a legtöbbet megváltoztatták egy kis humorral és véletlenszerûen kiválasztott szavakkal, amik kicsit sem teszik értelmessé. Ha használni készülsz a Lorem Ipsumot, biztosnak kell lenned abban, hogy semmi kínos sincs elrejtve a szöveg közepén. Az összes internetes Lorem Ipsum készítõ igyekszik elõre beállított részleteket ismételni a szükséges mennyiségben, ezzel téve az internet egyetlen igazi Lorem Ipsum generátorává ezt az oldalt. Az oldal körülbelül 200 latin szót használ, egy maroknyi modell-mondatszerkezettel így téve a Lorem Ipsumot elfogadhatóvá. Továbbá az elkészült Lorem Ipsum humortól, ismétlõdéstõl vagy értelmetlen szavaktól mentes.</p>
+<h2>Vaszilij EDC</h2>
+
+<p>
+    A Vaszilij EDC egy magyar nyelvű blog azoknak, akiket érdekelnek
+    a kések, zseblámpák, multitoolok és a mindennap hordott hasznos felszerelések.
+</p>
+
+<p>
+    Az oldalon bemutatók, tapasztalatok és személyes hangvételű írások jelennek meg
+    everyday carry témában. A cél nem a katalógusszerű terméklista, hanem az,
+    hogy egy-egy eszközről használat közben is kiderüljön, mire jó, miben erős,
+    és hol vannak a korlátai.
+</p>
+
+<h3>Kések és felszerelések</h3>
+
+<p>
+    Az oldal a témája hétköznapi használatra szánt kések:
+    folderek, fixpengések, kompakt modellek és különböző gyártók érdekes darabjai.
+    Ezek mellett helyet kapnak más EDC eszközök is, például hátizsákok,
+    zseblámpák, multitoolok és kisebb kiegészítők.
+</p>
+
+<h3>Miről szól az EDC?</h3>
+
+<p>
+    Az EDC, vagyis everyday carry azoknak a tárgyaknak a gyűjtőneve,
+    amelyeket az ember rendszeresen magánál hord, mert hasznosak lehetnek
+    a mindennapi helyzetekben. Egy jól összeállított EDC csomag egyszerre
+    praktikus, személyes és átgondolt.
+</p>
+
+<h3>Bemutatott eszközök</h3>
+
+<ul>
+    <li>Kések és bicskák bemutatása</li>
+    <li>Fixpengés és folder modellek</li>
+    <li>Multitoolok és zseblámpák</li>
+    <li>EDC táskák, hátizsákok és kiegészítők</li>
+    <li>Személyes tapasztalatok, vélemények és összehasonlítások</li>
+</ul>
+
+<h3>Bemutató videó</h3>
+
+<p>
+    Egy rövid beágyazott vifdeó a logóval:
+</p>
+
+<h3>Bemutató videó</h3>
+
+<p>
+    Egy rövid beágyazott videó a Vaszilij EDC logóval:
+</p>
+
+<div class="w3-center w3-margin-bottom">
+    <video width="800" controls style="max-width:100%;">
+        <source src="./videos/edc-demo.mp4" type="video/mp4">
+        A böngésződ nem támogatja a videó lejátszását.
+    </video>
+</div>
+
+<h3>Kapcsolódó videó</h3>
+
+<p>
+    Egy YouTube videó az EDC felszerelések és a mindennap hordott eszközök világából:
+</p>
+
+<div class="w3-center w3-margin-bottom">
+    <iframe width="800" height="450"
+        style="max-width:100%;"
+        src="https://www.youtube.com/embed/q4MhEmvYTNw"
+        title="YouTube videó"
+        allowfullscreen>
+    </iframe>
+</div>
