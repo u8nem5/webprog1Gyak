@@ -1,7 +1,7 @@
 <?php
-
 session_start();
-require_once __DIR__ . '/includes/dbo.php';
+
+require_once __DIR__ . '/../includes/pdo.php';
 
 function isLoggedIn()
 {
@@ -18,8 +18,8 @@ function requireLogin()
 
 function cleanArticleHtml($html)
 {
-    // Only allowed html TAGs
-    $allowed = '<p><br><h2><h3><strong><b><em><i><u><ul><ol><li><blockquote><a><img><figure><figcaption>';
+    // Only allowed html tags
+    $allowed = '<p><br><h2><h3><strong><b><em><i><u><ul><ol><li><blockquote><a>';
     $html = strip_tags($html, $allowed);
 
     return trim($html);
@@ -48,7 +48,7 @@ function uploadCoverImage($oldPath = null)
         IMAGETYPE_JPEG => 'jpg',
         IMAGETYPE_PNG => 'png',
         IMAGETYPE_GIF => 'gif',
-        IMAGETYPE_WEBP => 'webp',
+        IMAGETYPE_WEBP => 'webp'
     ];
 
     $imageType = $info[2];
@@ -57,7 +57,7 @@ function uploadCoverImage($oldPath = null)
         return $oldPath;
     }
 
-    $uploadDir = __DIR__ . '/images/blog';
+    $uploadDir = __DIR__ . '/../images/blog';
 
     if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0775, true);
@@ -76,15 +76,13 @@ function uploadCoverImage($oldPath = null)
 
 function redirectToBlog()
 {
-    header('Location: index.php?oldal=blog');
+    header('Location: ../index.php?oldal=blog');
     exit;
 }
 
 $pdo = getPdo();
 $method = $_SERVER['REQUEST_METHOD'];
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-
-
 /*
 |--------------------------------------------------------------------------
 | GET api.php
@@ -114,7 +112,6 @@ if ($method === 'GET') {
     exit;
 }
 
-
 /*
 |--------------------------------------------------------------------------
 | POST api.php
@@ -142,8 +139,7 @@ if ($method === 'POST') {
             exit('A blogpost nem található.');
         }
 
-        $oldCover = $oldPost['cover_image'] ?? null;
-        $coverImage = uploadCoverImage($oldCover);
+        $coverImage = uploadCoverImage($oldPost['cover_image']);
 
         $stmt = $pdo->prepare('UPDATE blogposts SET title = ?, content = ?, cover_image = ? WHERE id = ?');
         $stmt->execute([$title, $content, $coverImage, $id]);
@@ -157,7 +153,6 @@ if ($method === 'POST') {
     redirectToBlog();
 }
 
-
 /*
 |--------------------------------------------------------------------------
 | DELETE api.php?id=XXX
@@ -168,8 +163,7 @@ if ($method === 'DELETE') {
 
     if ($id <= 0) {
         http_response_code(400);
-        echo 'Hiányzó blogpost azonosító.';
-        exit;
+        exit('Hiányzó blogpost azonosító.');
     }
 
     $stmt = $pdo->prepare('DELETE FROM blogposts WHERE id = ?');
@@ -179,7 +173,6 @@ if ($method === 'DELETE') {
     echo json_encode(['success' => true], JSON_UNESCAPED_UNICODE);
     exit;
 }
-
 
 http_response_code(405);
 echo 'Nem támogatott HTTP metódus.';

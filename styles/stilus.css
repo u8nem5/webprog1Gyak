@@ -43,3 +43,30 @@ input, textarea, select {
     font-weight: bold;
 }
 
+.blog-editor {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.editor-toolbar {
+    background: #eee;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.editor-toolbar button,
+.editor-toolbar select {
+    margin: 2px;
+}
+
+#editor {
+    min-height: 350px;
+    background: white;
+    margin-top: 8px;
+}
+
+#current-cover img {
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 12px;
+}
