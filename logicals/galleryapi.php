@@ -56,43 +56,8 @@ function uploadImage()
     return 'images/gallery/' . $filename;
 }
 
-function redirectToGallery()
-{
-    header('Location: /kepek');
-    exit;
-}
-
 $pdo = getPdo();
 $method = $_SERVER['REQUEST_METHOD'];
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-/*
-|--------------------------------------------------------------------------
-| GET galleryapi.php
-| GET galleryapi.php?id=XXX <-- This one is unnecessary for the project, but it can be used to get a single image.
-|--------------------------------------------------------------------------
-*/
-if ($method === 'GET') {
-    header('Content-Type: application/json; charset=utf-8');
-
-    if ($id > 0) {
-        $stmt = $pdo->prepare('SELECT id, title, gimage FROM gallery WHERE id = ?');
-        $stmt->execute([$id]);
-        $image = $stmt->fetch();
-
-        if (!$image) {
-            http_response_code(404);
-            echo json_encode(['error' => 'A kép nem található.'], JSON_UNESCAPED_UNICODE);
-            exit;
-        }
-
-        echo json_encode($image, JSON_UNESCAPED_UNICODE);
-        exit;
-    }
-
-    $stmt = $pdo->query('SELECT id, title,gimage FROM gallery ORDER BY id DESC');
-    echo json_encode($stmt->fetchAll(), JSON_UNESCAPED_UNICODE);
-    exit;
-}
 
 /*
 |--------------------------------------------------------------------------
@@ -117,7 +82,8 @@ if ($method === 'POST') {
     $stmt->execute([$title, $gimage]);
 
 
-    redirectToGallery();
+    header('Location: /kepek');
+    exit;
 }
 
 /*
@@ -127,6 +93,7 @@ if ($method === 'POST') {
 */
 if ($method === 'DELETE') {
     requireLogin();
+    $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
     if ($id <= 0) {
         http_response_code(400);
