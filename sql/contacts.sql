@@ -1,4 +1,6 @@
-CREATE TABLE IF NOT EXISTS contact_messages (
+DROP TABLE IF EXISTS contact_messages;
+
+CREATE TABLE contact_messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,

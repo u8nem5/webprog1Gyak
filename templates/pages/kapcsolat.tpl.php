@@ -1,14 +1,9 @@
 <h2>Kapcsolat</h2>
 
-<p>Ügyvezető: <strong>Valaki Az</strong></p>
-<p>E-mail: <strong>valaki.az@minihonlap.hu</strong></p>
+<p>Ügyvezető: <strong>Valaki Valaki</strong></p>
+<p>E-mail: <strong>valaki.az@valaki.hu</strong></p>
 
 <form id="contactForm" class="w3-card w3-padding" method="post" action="logicals/contactapi.php">
-    <label>Név</label>
-    <input class="w3-input w3-border" type="text" name="name" id="name">
-
-    <label>E-mail</label>
-    <input class="w3-input w3-border" type="text" name="email" id="email">
 
     <label>Tárgy</label>
     <input class="w3-input w3-border" type="text" name="subject" id="subject">

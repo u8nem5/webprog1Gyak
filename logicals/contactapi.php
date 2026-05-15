@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once __DIR__ . '/../includes/pdo.php';
 
@@ -14,21 +15,16 @@ require_once __DIR__ . '/../includes/pdo.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    if (!empty($_SESSION['login'])) {
+        $name = $_SESSION['csn'] . " " . $_SESSION['un'];
+    } else {
+        $name = 'Vendég';
+    }
 
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
     $subject = trim($_POST['subject'] ?? '');
     $message = trim($_POST['message'] ?? '');
 
     $errors = [];
-
-    if (strlen($name) < 3) {
-        $errors[] = 'A név legalább 3 karakter legyen.';
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Hibás e-mail cím.';
-    }
 
     if (strlen($subject) < 3) {
         $errors[] = 'A tárgy legalább 3 karakter legyen.';
@@ -52,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pdo = getPdo();
 
     $stmt = $pdo->prepare(
-        'INSERT INTO contact_messages (name, email, subject, message, created_at)
-        VALUES (?, ?, ?, ?, NOW())'
+        'INSERT INTO contact_messages (name, subject, message, created_at)
+        VALUES (?, ?, ?, NOW())'
     );
 
-    $stmt->execute([$name, $email, $subject, $message]);
+    $stmt->execute([$name, $subject, $message]);
 
     header('Location: ../kapcsolat?success=1');
     exit;

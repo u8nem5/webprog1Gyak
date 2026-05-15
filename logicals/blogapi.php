@@ -78,6 +78,38 @@ $pdo = getPdo();
 $method = $_SERVER['REQUEST_METHOD'];
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
+
+
+/*
+|--------------------------------------------------------------------------
+| GET api.php
+| GET api.php?id=XXX
+|--------------------------------------------------------------------------
+*/
+if ($method === 'GET') {
+    header('Content-Type: application/json; charset=utf-8');
+
+    if ($id > 0) {
+        $stmt = $pdo->prepare('SELECT id, title, content, cover_image, created_at FROM blogposts WHERE id = ?');
+        $stmt->execute([$id]);
+        $post = $stmt->fetch();
+
+        if (!$post) {
+            http_response_code(404);
+            echo json_encode(['error' => 'A blogpost nem található.'], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        echo json_encode($post, JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+    $stmt = $pdo->query('SELECT id, title, content, cover_image, created_at FROM blogposts ORDER BY created_at DESC, id DESC');
+    echo json_encode($stmt->fetchAll(), JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | POST blogapi.php

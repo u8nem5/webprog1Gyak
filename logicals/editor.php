@@ -104,7 +104,7 @@ if (postId > 0) {
 
             if (post.cover_image) {
                 document.getElementById('current-cover').innerHTML =
-                    '<p>Jelenlegi kép:</p><img class="w3-border" src="' + post.cover_image + '">';
+                    '<p>Jelenlegi kép:</p><img class="w3-border" src="../' + post.cover_image + '">';
             }
         });
 }
