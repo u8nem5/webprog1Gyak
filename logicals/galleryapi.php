@@ -108,7 +108,7 @@ if ($method === 'POST') {
 
 
     if ($title === '') {
-        $title = getimagesize($_FILES['gimage']['tmp_name'])[1];
+        $title = $_FILES['gimage']['name'] ?? 'Nincs cím';
     }
 
     $gimage = uploadImage();
