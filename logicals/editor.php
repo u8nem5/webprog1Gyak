@@ -14,7 +14,7 @@ $id = (int)($_GET['id'] ?? 0);
     <title>Blogpost szerkesztő</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="styles/stilus.css">
+    <link rel="stylesheet" href="../styles/stilus.css">
 </head>
 <body>
 
@@ -37,13 +37,6 @@ $id = (int)($_GET['id'] ?? 0);
         <label>Cikk szövege</label>
 
         <div class="editor-toolbar w3-border">
-            <select onchange="formatText(this.value); this.value = '';">
-                <option value="">Formátum</option>
-                <option value="p">Bekezdés</option>
-                <option value="h2">Cím</option>
-                <option value="h3">Alcím</option>
-                <option value="blockquote">Idézet</option>
-            </select>
 
             <button class="w3-button w3-border" type="button" onclick="cmd('bold')"><b>B</b></button>
             <button class="w3-button w3-border" type="button" onclick="cmd('italic')"><i>I</i></button>
@@ -71,13 +64,6 @@ let form = document.getElementById('blogForm');
 function cmd(name) {
     editor.focus();
     document.execCommand(name, false, null);
-}
-
-function formatText(tag) {
-    if (tag !== '') {
-        editor.focus();
-        document.execCommand('formatBlock', false, tag);
-    }
 }
 
 function addLink() {

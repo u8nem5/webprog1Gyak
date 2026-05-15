@@ -32,7 +32,6 @@ $messages = $stmt->fetchAll();
         <h3><?= htmlspecialchars($msg['subject']) ?></h3>
 
         <p><b>Név:</b> <?= htmlspecialchars($msg['name']) ?></p>
-        <p><b>E-mail:</b> <?= htmlspecialchars($msg['email']) ?></p>
         <p><b>Dátum:</b> <?= htmlspecialchars($msg['created_at']) ?></p>
         <p><b>Üzenet:</b><br><?= nl2br(htmlspecialchars($msg['message'])) ?></p>
     </div>

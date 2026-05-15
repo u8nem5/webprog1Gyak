@@ -32,22 +32,9 @@
 
 <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
+    
         var subject = document.getElementById('subject').value;
         var message = document.getElementById('message').value;
-
-        if (name.length < 3) {
-            alert('A név legalább 3 karakter legyen.');
-            event.preventDefault();
-            return;
-        }
-
-        if (email === '' || !email.includes('@') || !email.includes('.')) {
-            alert('Hibás e-mail cím.');
-            event.preventDefault();
-            return;
-        }
 
         if (subject.length < 3) {
             alert('A tárgy legalább 3 karakter legyen.');
